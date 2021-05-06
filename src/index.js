@@ -3,10 +3,10 @@ import path from 'path';
 import _ from 'lodash';
 
 export default (filepath1, filepath2) => {
-  const filePathOne = fs.readFileSync(path.resolve(filepath1), 'utf-8');
-  const filePathTwo = fs.readFileSync(path.resolve(filepath2), 'utf-8');
-  const firstObject = JSON.parse(filePathOne);
-  const secondObject = JSON.parse(filePathTwo);
+  const filePathOne = path.resolve(process.cwd(),'__fixtures__', filepath1);
+  const filePathTwo = path.resolve(process.cwd(),'__fixtures__', filepath2);
+  const firstObject = JSON.parse(fs.readFileSync(filePathOne));
+  const secondObject = JSON.parse(fs.readFileSync(filePathTwo));
 
   const objCompare = Object.entries(firstObject).reduce((acc, [key, value]) => {
     const hasKey = _.has(secondObject, key);
