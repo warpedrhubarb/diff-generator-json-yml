@@ -3,8 +3,8 @@ import path from 'path';
 import _ from 'lodash';
 
 export default (filepath1, filepath2) => {
-  const filePathOne = path.resolve(process.cwd(),'__fixtures__', filepath1);
-  const filePathTwo = path.resolve(process.cwd(),'__fixtures__', filepath2);
+  const filePathOne = path.resolve(process.cwd(), '__fixtures__', filepath1);
+  const filePathTwo = path.resolve(process.cwd(), '__fixtures__', filepath2);
   const firstObject = JSON.parse(fs.readFileSync(filePathOne));
   const secondObject = JSON.parse(fs.readFileSync(filePathTwo));
 

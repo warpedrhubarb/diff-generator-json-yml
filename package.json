@@ -4,11 +4,12 @@
   "main": "index.js",
   "version": "0.1.0",
   "description": "Difference Calculator",
-  "scripts": {
-    "test": "test"
-  },
   "bin": {
     "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "npx node --experimental-vm-modules node_modules/.bin/jest --bail",
+    "testWatch": "npx jest --watch --bail"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,6 @@
   "devDependencies": {
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^23.9.0",
     "jest": "^26.6.3",

@@ -1,6 +1,6 @@
 // import fs from 'fs';
 import path from 'path';
-import genDiff from '..';
+import genDiff from '../src/index.js';
 
 const expected = `{
     host: hexlet.io
