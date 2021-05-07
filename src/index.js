@@ -1,16 +1,10 @@
 import _ from 'lodash';
-import getDataAndFormat from "./getDataAndFormat.js";
-import parse from "./parsers.js"
+import getDataAndFormat from './getDataAndFormat.js';
+import parse from './parsers.js';
 
 export default (filepath1, filepath2) => {
-
-  const [firstObjData, firstObjType] = getDataAndFormat(filepath1);
-  const [secondObjData, secondObjType] = getDataAndFormat(filepath2);
-
-  const firstObject = parse(firstObjType)(firstObjData);
-  const secondObject = parse(secondObjType)(secondObjData);
-
-
+  const firstObject = parse(getDataAndFormat(filepath1));
+  const secondObject = parse(getDataAndFormat(filepath2));
 
   const objCompare = Object.entries(firstObject).reduce((acc, [key, value]) => {
     const hasKey = _.has(secondObject, key);
