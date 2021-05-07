@@ -3,3 +3,7 @@
 
 #### Usage example:
 [![asciicast](https://asciinema.org/a/gzNBH1Um6IunbJFReqnm4FsR0.svg)](https://asciinema.org/a/gzNBH1Um6IunbJFReqnm4FsR0)
+
+#### UPD: Add YML2YML comparison support:
+
+[![asciicast](https://asciinema.org/a/ilqQg3EvggyZXLGUlnaFmBJ5E.svg)](https://asciinema.org/a/ilqQg3EvggyZXLGUlnaFmBJ5E)

@@ -18,3 +18,8 @@ test('basic', () => {
   expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json')) === expected)
     .toBe(true);
 });
+
+test('basic-yaml', () => {
+  expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yml')) === expected)
+    .toBe(true);
+});

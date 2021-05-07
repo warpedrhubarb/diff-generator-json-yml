@@ -1,12 +1,16 @@
-import fs from 'fs';
-import path from 'path';
 import _ from 'lodash';
+import getDataAndFormat from "./getDataAndFormat.js";
+import parse from "./parsers.js"
 
 export default (filepath1, filepath2) => {
-  const filePathOne = path.resolve(process.cwd(), '__fixtures__', filepath1);
-  const filePathTwo = path.resolve(process.cwd(), '__fixtures__', filepath2);
-  const firstObject = JSON.parse(fs.readFileSync(filePathOne));
-  const secondObject = JSON.parse(fs.readFileSync(filePathTwo));
+
+  const [firstObjData, firstObjType] = getDataAndFormat(filepath1);
+  const [secondObjData, secondObjType] = getDataAndFormat(filepath2);
+
+  const firstObject = parse(firstObjType)(firstObjData);
+  const secondObject = parse(secondObjType)(secondObjData);
+
+
 
   const objCompare = Object.entries(firstObject).reduce((acc, [key, value]) => {
     const hasKey = _.has(secondObject, key);
