@@ -24,9 +24,10 @@ const stylish = (diff, depth = 0) => {
       case 'unchanged':
         return `${indentDepth(depth)}${indentEmpty}${object.name}: ${valueFormatter(object.value, depth)}`;
       case 'updated':
-        return `${indentDepth(depth)}${indentMinus}${object.name}: ${valueFormatter(object.oldValue, depth)}\n${indentDepth(depth)}${indentPlus}${object.name}: ${valueFormatter(object.newValue, depth)}`;
-      // case 'parent':
-      //   return `${indentDepth(depth)}${indentEmpty}${object.name}: ${stylish(object.children, depth + 1)}`;
+        return `${indentDepth(depth)}${indentMinus}${object.name}: ${valueFormatter(object.oldValue, depth)}\n`
+          + `${indentDepth(depth)}${indentPlus}${object.name}: ${valueFormatter(object.newValue, depth)}`;
+      case 'parent':
+        return `${indentDepth(depth)}${indentEmpty}${object.name}: ${stylish(object.children, depth + 1)}`;
       default:
         throw new Error(`"${object.diffEntryType}" type is not supported by the formatter.`);
     }
