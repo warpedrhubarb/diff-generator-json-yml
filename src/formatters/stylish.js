@@ -19,7 +19,7 @@ const stylish = (diff, depth = 0) => {
     switch (object.diffEntryType) {
       case 'added':
         return `${indentDepth(depth)}${indentPlus}${object.name}: ${valueFormatter(object.value, depth)}`;
-      case 'deleted':
+      case 'removed':
         return `${indentDepth(depth)}${indentMinus}${object.name}: ${valueFormatter(object.value, depth)}`;
       case 'unchanged':
         return `${indentDepth(depth)}${indentEmpty}${object.name}: ${valueFormatter(object.value, depth)}`;

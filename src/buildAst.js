@@ -12,7 +12,7 @@ const buildAst = (object1, object2) => {
     }
     if (!_.has(object2, key)) {
       return {
-        name: key, diffEntryType: 'deleted', value: object1[key],
+        name: key, diffEntryType: 'removed', value: object1[key],
       };
     }
     if (_.isObject(object1[key]) && _.isObject(object2[key])) {
