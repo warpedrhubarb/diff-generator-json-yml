@@ -57,17 +57,24 @@ Property 'group1.nest' was updated. From [complex value] to 'str'
 Property 'group2' was removed
 Property 'group3' was added with value: [complex value]`;
 
+const expectedJson = '[{"name":"common","diffEntryType":"parent","children":[{"name":"follow","diffEntryType":"added","value":false},{"name":"setting1","diffEntryType":"unchanged","value":"Value 1"},{"name":"setting2","diffEntryType":"removed","value":200},{"name":"setting3","diffEntryType":"updated","oldValue":true,"newValue":null},{"name":"setting4","diffEntryType":"added","value":"blah blah"},{"name":"setting5","diffEntryType":"added","value":{"key5":"value5"}},{"name":"setting6","diffEntryType":"parent","children":[{"name":"doge","diffEntryType":"parent","children":[{"name":"wow","diffEntryType":"updated","oldValue":"","newValue":"so much"}]},{"name":"key","diffEntryType":"unchanged","value":"value"},{"name":"ops","diffEntryType":"added","value":"vops"}]}]},{"name":"group1","diffEntryType":"parent","children":[{"name":"baz","diffEntryType":"updated","oldValue":"bas","newValue":"bars"},{"name":"foo","diffEntryType":"unchanged","value":"bar"},{"name":"nest","diffEntryType":"updated","oldValue":{"key":"value"},"newValue":"str"}]},{"name":"group2","diffEntryType":"removed","value":{"abc":12345,"deep":{"id":45}}},{"name":"group3","diffEntryType":"added","value":{"deep":{"id":{"number":45}},"fee":100500}}]';
+
 test('basic', () => {
   expect(genDiff('file1.json', 'file2.json') === expected)
     .toBe(true);
 });
 
-test('basic-yaml', () => {
+test('yaml', () => {
   expect(genDiff('file1.yml', 'file2.yml') === expected)
     .toBe(true);
 });
 
 test('plain', () => {
   expect(genDiff('file1.json', 'file2.json', 'plain') === expectedPlain)
+    .toBe(true);
+});
+
+test('json', () => {
+  expect(genDiff('file1.json', 'file2.json', 'json') === expectedJson)
     .toBe(true);
 });
