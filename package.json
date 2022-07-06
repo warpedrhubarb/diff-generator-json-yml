@@ -1,9 +1,9 @@
 {
   "type": "module",
-  "name": "@hexlet/code",
+  "name": "diff-generator-json-yml",
   "main": "src/index.js",
-  "version": "0.1.0",
-  "description": "Difference Calculator",
+  "version": "0.1.1",
+  "description": "Difference Generator for JSON and YML files",
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/warpedrhubarb/frontend-project-lvl2.git"
+    "url": "git+https://github.com/warpedrhubarb/diff-generator-json-yml.git"
   },
-  "author": "warpedrhubarb",
+  "author": "Maksim S",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/warpedrhubarb/frontend-project-lvl2/issues"
+    "url": "https://github.com/warpedrhubarb/diff-generator-json-yml/issues"
   },
-  "homepage": "https://github.com/warpedrhubarb/frontend-project-lvl2#readme",
+  "homepage": "https://github.com/warpedrhubarb/diff-generator-json-yml#readme",
   "dependencies": {
     "commander": "^7.2.0",
     "js-yaml": "^3.14.1",
