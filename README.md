@@ -4,7 +4,7 @@
 
 ## Description
 
-A command line tool for generating difference between two JSON or YML files. Jest is used for testing.
+A command line tool for generating difference between two JSON and/or YML files. Jest is used for testing.
 
 ## Installation
 
