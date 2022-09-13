@@ -7,14 +7,3 @@ const mapping = {
 };
 
 export default ([data, format]) => mapping[format](data);
-
-// export default ([data, format]) => {
-//   let parse;
-//   if (format === '.json') {
-//     parse = JSON.parse;
-//   }
-//   if (format === '.yml' || format === '.yaml') {
-//     parse = yaml.safeLoad;
-//   }
-//   return parse(data);
-// };
